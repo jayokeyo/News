@@ -1,0 +1,12 @@
+<!-- templates/article_new.html -->
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>New article</h1>
+<form action="" method="post">{% csrf_token %}
+ {{ form|crispy }}
+ <button class="btn btn-success ml-2" type="submit">Save</button>
+ <button class="btn btn-success ml-2" type="reset">Clear</button>
+ <button class="btn btn-success ml-3" type="reset"><a href="{% url 'article_list' %}">Back</a></button>
+</form>
+{% endblock content %}
